@@ -1,0 +1,68 @@
+import type { Product } from "./store"
+
+export const products: Product[] = [
+  {
+    id: "1",
+    name: "Fone de Ouvido Premium",
+    price: 299.9,
+    image: "/premium-wireless-headphones.png",
+    description: "Fone de ouvido sem fio com cancelamento de ruído ativo",
+    category: "Áudio",
+  },
+  {
+    id: "2",
+    name: "Smartwatch Pro",
+    price: 899.9,
+    image: "/modern-smartwatch.png",
+    description: "Relógio inteligente com monitoramento de saúde completo",
+    category: "Wearables",
+  },
+  {
+    id: "3",
+    name: "Câmera Digital 4K",
+    price: 1499.9,
+    image: "/professional-4k-camera.jpg",
+    description: "Câmera profissional com gravação em 4K e estabilização",
+    category: "Fotografia",
+  },
+  {
+    id: "4",
+    name: "Teclado Mecânico RGB",
+    price: 449.9,
+    image: "/rgb-mechanical-keyboard.jpg",
+    description: "Teclado mecânico gamer com iluminação RGB personalizável",
+    category: "Periféricos",
+  },
+  {
+    id: "5",
+    name: "Mouse Gamer Wireless",
+    price: 249.9,
+    image: "/wireless-gaming-mouse.png",
+    description: "Mouse sem fio de alta precisão para jogos",
+    category: "Periféricos",
+  },
+  {
+    id: "6",
+    name: 'Monitor Ultrawide 34"',
+    price: 1899.9,
+    image: "/ultrawide-monitor-34-inch.jpg",
+    description: "Monitor ultrawide curvo com resolução QHD",
+    category: "Monitores",
+  },
+  {
+    id: "7",
+    name: "Webcam Full HD",
+    price: 349.9,
+    image: "/full-hd-webcam.jpg",
+    description: "Webcam profissional com microfone integrado",
+    category: "Periféricos",
+  },
+  {
+    id: "8",
+    name: "SSD NVMe 1TB",
+    price: 599.9,
+    image: "/nvme-ssd-drive.jpg",
+    description: "SSD de alta velocidade com interface NVMe",
+    category: "Armazenamento",
+  },
+]
