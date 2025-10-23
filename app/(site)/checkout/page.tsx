@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { redirect, useRouter } from "next/navigation";
-import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import {
   Card,
