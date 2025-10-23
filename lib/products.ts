@@ -1,8 +1,8 @@
-import type { Product } from "./store"
+import { Product } from "@/app/types/product";
 
 export const products: Product[] = [
   {
-    id: "1",
+    id: 1,
     name: "Fone de Ouvido Premium",
     price: 299.9,
     image: "/premium-wireless-headphones.png",
@@ -10,7 +10,7 @@ export const products: Product[] = [
     category: "Áudio",
   },
   {
-    id: "2",
+    id: 2,
     name: "Smartwatch Pro",
     price: 899.9,
     image: "/modern-smartwatch.png",
@@ -18,7 +18,7 @@ export const products: Product[] = [
     category: "Wearables",
   },
   {
-    id: "3",
+    id: 3,
     name: "Câmera Digital 4K",
     price: 1499.9,
     image: "/professional-4k-camera.jpg",
@@ -26,7 +26,7 @@ export const products: Product[] = [
     category: "Fotografia",
   },
   {
-    id: "4",
+    id: 4,
     name: "Teclado Mecânico RGB",
     price: 449.9,
     image: "/rgb-mechanical-keyboard.jpg",
@@ -34,7 +34,7 @@ export const products: Product[] = [
     category: "Periféricos",
   },
   {
-    id: "5",
+    id: 5,
     name: "Mouse Gamer Wireless",
     price: 249.9,
     image: "/wireless-gaming-mouse.png",
@@ -42,7 +42,7 @@ export const products: Product[] = [
     category: "Periféricos",
   },
   {
-    id: "6",
+    id: 6,
     name: 'Monitor Ultrawide 34"',
     price: 1899.9,
     image: "/ultrawide-monitor-34-inch.jpg",
@@ -50,7 +50,7 @@ export const products: Product[] = [
     category: "Monitores",
   },
   {
-    id: "7",
+    id: 7,
     name: "Webcam Full HD",
     price: 349.9,
     image: "/full-hd-webcam.jpg",
@@ -58,7 +58,7 @@ export const products: Product[] = [
     category: "Periféricos",
   },
   {
-    id: "8",
+    id: 8,
     name: "SSD NVMe 1TB",
     price: 599.9,
     image: "/nvme-ssd-drive.jpg",

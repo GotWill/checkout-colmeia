@@ -1,22 +1,33 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { ShoppingCart, User } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { useStore } from "@/lib/store"
+import Link from "next/link";
+import { ShoppingCart, User } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { useStore } from "@/app/store/user";
+import { useCartStore } from "@/app/store/cart";
 
 export function Header() {
-  const { user, cartCount } = useStore()
+  const { user } = useStore();
+  const { cart } = useCartStore();
+
+  const words = user.name.split(" ");
+
+  const first = words[0];
+  const last = words[words.length - 1];
+
+  const initials = first[0] + last[0];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/catalog" className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <span className="font-mono text-sm font-bold text-primary-foreground">S</span>
+            <span className="text-sm font-bold text-primary-foreground">
+              S
+            </span>
           </div>
-          <span className="text-lg font-semibold">Store</span>
+          <span className="text-lg font-bold">Store</span>
         </Link>
 
         <nav className="flex items-center gap-4">
@@ -29,17 +40,22 @@ export function Header() {
           <Link href="/cart" className="relative">
             <Button variant="ghost" size="icon">
               <ShoppingCart className="h-5 w-5" />
-              {cartCount > 0 && (
-                <Badge variant="destructive" className="absolute -right-1 -top-1 h-5 w-5 rounded-full p-0 text-xs">
-                  {cartCount}
+              {cart.length > 0 && (
+                <Badge
+                  variant="destructive"
+                  className="absolute -right-1 -top-1 h-5 w-5 rounded-full p-0 text-xs"
+                >
+                  {cart.length}
                 </Badge>
               )}
             </Button>
           </Link>
 
-          {user ? (
+          {user.isAuthenticate ? (
             <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">{user.name}</span>
+              <span className="text-sm text-muted-foreground bg-gray-200 p-2 rounded-sm font-bold">
+                {initials}
+              </span>
               <Button variant="ghost" size="icon">
                 <User className="h-5 w-5" />
               </Button>
@@ -52,5 +68,5 @@ export function Header() {
         </nav>
       </div>
     </header>
-  )
+  );
 }

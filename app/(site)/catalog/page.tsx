@@ -1,18 +1,17 @@
 "use client"
 
 import { useState } from "react"
-import { Header } from "@/components/header"
-import { ProductCard } from "@/components/product-card"
 import { products } from "@/lib/products"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Search } from "lucide-react"
+import { ProductCard } from "./components/product-card"
 
 export default function CatalogPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
 
-  const categories = Array.from(new Set(products.map((p) => p.category)))
+  const categories = Array.from(new Set(products.map((product) => product.category)))
 
   const filteredProducts = products.filter((product) => {
     const matchesSearch =
@@ -24,8 +23,6 @@ export default function CatalogPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold tracking-tight text-balance">Catálogo de Produtos</h1>
