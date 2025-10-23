@@ -16,7 +16,7 @@ export function Header() {
   const first = words[0];
   const last = words[words.length - 1];
 
-  const initials = first[0] + last[0];
+  const initials = first[0].toUpperCase() + last[0].toUpperCase();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur">
